@@ -18,12 +18,23 @@ function useStats() {
 function Stats() {
     const stats = useStats();
     if(!stats) return <p>Loading...</p>;
+    console.log(stats)
 
     return (
     <div>
         <div className='statBlock'>
             <span>
-                
+                {stats.map(coin => {
+                    return (
+                        <ul>
+                            <img src={coin.image}></img>
+                            <li>Name: {coin.name}</li>
+                            <li>Symbol: {coin.symbol}</li>
+                            <li>Price: {coin.current_price}</li>
+                            <li>Market Cap: {coin.market_cap}</li>
+                        </ul>
+                    )
+                })}
             </span>
         </div>
     </div>
