@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import { CoinContainer, CoinData } from "./styles.js"
+var numeral = require('numeral')
 
 function useStats() {
     const [stats, setStats] = useState();
@@ -23,19 +25,18 @@ function Stats() {
     return (
     <div>
         <div className='statBlock'>
-            <span>
                 {stats.map(coin => {
                     return (
-                        <ul>
-                            <img src={coin.image}></img>
-                            <li>Name: {coin.name}</li>
-                            <li>Symbol: {coin.symbol}</li>
-                            <li>Price: {coin.current_price}</li>
-                            <li>Market Cap: {coin.market_cap}</li>
-                        </ul>
+                        <CoinContainer>
+                            <img style={{width: '25px', height: 'auto'}} src={coin.image}></img>
+                            <CoinData>{coin.name}</CoinData>
+                            <CoinData>{coin.symbol}</CoinData>
+                            <CoinData>{coin.current_price}</CoinData>
+                            <CoinData>{numeral(coin.circulating_supply).format()}</CoinData>
+                            <CoinData>{numeral(coin.market_cap).format('$0,0[.]00')}</CoinData>
+                        </CoinContainer>
                     )
                 })}
-            </span>
         </div>
     </div>
     )
@@ -44,6 +45,7 @@ function Stats() {
 export default function IndexPage() {
     return (
         <div>
+            <p>Powered by <a href='https://www.coingecko.com/en/api#explore-api'>CoinGecko API</a></p>
             <Stats></Stats>
         </div>
     )

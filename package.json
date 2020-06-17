@@ -19,7 +19,9 @@
   "homepage": "https://github.com/WayneMitt/ReactCoinGecko#readme",
   "dependencies": {
     "next": "^9.4.4",
+    "numeral": "^2.0.6",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   }
 }
