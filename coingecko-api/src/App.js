@@ -37,7 +37,7 @@ function Stats() {
                 {stats.map(coin => {
                     return (
                         <CoinContainer>
-                            <img style={{width: '25px', height:'25px'}} src={coin.image}></img>
+                            <img style={{width: '25px', height:'25px'}} src={coin.image} alt='coin logo'></img>
                             <CoinData>{coin.name}</CoinData>
                             <CoinData>{coin.symbol.toUpperCase()}</CoinData>
                             <CoinData>{numeral(coin.current_price).format('$0,0[.]00')}</CoinData>
