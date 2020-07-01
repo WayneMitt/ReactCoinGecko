@@ -37,8 +37,10 @@ function Stats() {
                 {stats.map(coin => {
                     return (
                         <CoinContainer>
-                            <img style={{width: '25px', height:'25px'}} src={coin.image} alt='coin logo'></img>
-                            <CoinData>{coin.name}</CoinData>
+                            <div className='picName'>
+                                <img style={{width: '25px', height:'25px'}} src={coin.image} alt='coin logo'></img>
+                                <CoinData>{coin.name}</CoinData>
+                            </div>
                             <CoinData>{coin.symbol.toUpperCase()}</CoinData>
                             <CoinData>{numeral(coin.current_price).format('$0,0[.]00')}</CoinData>
                             <CoinData>{numeral(coin.circulating_supply).format()} {coin.symbol.toUpperCase()}</CoinData>
@@ -55,6 +57,7 @@ export default function App() {
     return (
         <div>
             <p>Powered by <a href='https://www.coingecko.com/en/api#explore-api'>CoinGecko API</a></p>
+            <h1>Top 100 Cryptocurrencies by Market Cap</h1>
             <Stats></Stats>
         </div>
     )

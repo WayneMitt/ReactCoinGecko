@@ -7,13 +7,23 @@ body {
 
 .fields {
   display: flex;
-  align-items:center;
+  justify-content: space-evenly;
   margin: 10px;
 }
 
 .fields h2{
-  font: Arial, sans-serif;
   font-size: medium;
   columns: auto 12em;
-  margin-right: 40px;
+}
+
+.picName {
+  display: flex;
+}
+
+.picName img {
+   margin-right: 5px;
+}
+
+h1 {
+  text-align: center;
 }
